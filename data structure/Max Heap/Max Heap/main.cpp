@@ -31,55 +31,38 @@ long long top(long long* list){
 }
 
 
-long long* get_child_node(long long* list,int current_postion){
-    long long temp=list[current_postion];
-    int child_postion;
-    int right,left;
-    ///明天改
-    if (length>2*(current_postion+1)) {//当有两个子节点时
-        //left=2*(current_postion+1)-1;
-        right=2*(current_postion+1);
-        left=right-1;
-        if (list[right]<list[left]) {//判断哪个子节点数据比较大，保存大的子节点的位置
-            child_postion=left;
-        }else{
-            child_postion=right;
-        }
-    }else if (length==2*(current_postion+1)){
-        child_postion=length-1;
-    }else{
-        return  list;
-    }
-    if (temp< list[child_postion]) {
-        list[current_postion]=list[child_postion];
-        list[child_postion]=temp;
-        list=get_child_node(list, child_postion);
-    }
-    return list;
-}
-
-long long* get_father_node(long long* list,int current_postion){
-    long long temp=list[current_postion];
-    int father_postion=(current_postion+1)/2-1;
-    if (current_postion==0||temp<list[father_postion]) {///顶层或者父节点大于自己
-        return list;
-    }
-    //当前节点与父节点交换位置
-    list[current_postion]=list[father_postion];
-    list[father_postion]=temp;
-    list=get_father_node(list, father_postion);
-    return list;
-}
-
 long long* pop(long long* list){
     length--;
+    int postion=0;//POP时初始节点为0节点
     //long long* result=new long long[length];
-    list[0]=list[length];
-//    for (int i=1; i<length; i++) {
-//        result[i]=list[i];
-//    }
-//    
-    list=get_child_node(list, 0);
+    list[postion]=list[length];//将0节点赋值为末位数
+    //list=get_child_node(list, 0);
+    int long long number;
+    while (true) {
+        int child_postion,right,left;
+        right=2*postion+2;
+        if (length>right) {//当有两个子节点时
+            left=right-1;
+            if (list[left]>list[right]) {//两个子节点取大值
+                child_postion=left;
+            }else{
+                child_postion=right;
+            }
+        }else if (length==right){//只有一个子节点时取左边的
+            child_postion=right-1;
+        }else{//没有子节点时跳出循环
+            break;
+        }
+        number=list[postion];
+        if (number>=list[child_postion]) {//当当前节点值大于等于子节点大的一个数的值时，跳出循环
+            break;
+        }else{//否则交换父节点与子节点的值
+            list[postion]=list[child_postion];
+            list[child_postion]=number;
+            postion=child_postion;
+        }
+        
+    }
     return  list;
 }
 
@@ -91,7 +74,18 @@ long long* push(long long* list,long long number){
 //        result[i]=list[i];
 //    }
     list[postion]=number;
-    list=get_father_node(list, postion);
+    //list=get_father_node(list, postion);
+    while (postion>0) {
+        int father_postion=(postion+1)/2-1;
+        if (number<list[father_postion]) {//与父节点比较
+            break;                          //如果比父节点小,则跳出循环
+        }else{
+            list[postion]=list[father_postion];//否则将父结点与当前结点交换位置
+            list[father_postion]=number;
+            postion=father_postion;             //当前节点设为原节点父节点
+            number=list[postion];               //number为当前节点值
+        }
+    }
     return list;
 }
 
@@ -120,7 +114,7 @@ long long read_data(int count){
             default:
                 break;
         }
-        //print_list(length, list);
+        print_list(length, list);
     }
     delete [] list;
     return result;
