@@ -9,24 +9,16 @@
 #include <iostream>
 using namespace std;
 
-long head=0;
-long length=0;
-
-void print_list(long long *list){
-    for (long i=head; i<head+length; i++) {
-        cout<<list[i]<<" ";
-    }
-    cout<<endl;
-}
+int head=0;
+int length=0;
 
 long long serve(long long* list){
     head++;
-    length--;
     return list[head-1];
 }
 
 long long* insert(long long* list, long long number){
-    list[head+length]=number;
+    list[length]=number;
     length++;
     return list;
 }
@@ -55,13 +47,12 @@ long long read_data(int count){
             default:
                 break;
         }
-        print_list(list);
         count--;
     }
     return sum;
 }
 
-int main(int argc, const char * argv[]) {
+int main2(int argc, const char * argv[]) {
     // insert code here...
     int n;
     cin>>n;
