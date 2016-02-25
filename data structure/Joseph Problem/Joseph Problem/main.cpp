@@ -67,6 +67,7 @@ int read_data(int T){
         cin>>length>>number;
         counts=length;
         sum+=joseph(number);
+        delete [] queue;
     }
     return sum;
 }
