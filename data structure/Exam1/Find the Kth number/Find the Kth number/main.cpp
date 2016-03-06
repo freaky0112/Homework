@@ -10,9 +10,20 @@
 #include <math.h>
 
 using namespace std;
+
+struct function_fx{
+    int a,b,k;
+};
+
+typedef struct function_fx fx;
+
 int length=0;
 
-void print_list(int length, int *list){
+int get_value(fx factor){
+    return factor.a*factor.k+factor.b;
+}
+
+void print_list(int length, fx *list){
     
     std::cout<<"\n";
     int n=1;
@@ -21,34 +32,34 @@ void print_list(int length, int *list){
             cout<<"\n";
             n++;
         }
-        std::cout<<list[i]<<" ";
+        std::cout<<get_value(list[i])<<" ";
     }
     std::cout<<"\n";
     
 }
 
-int top(int* list){
+fx top(fx* list){
     return list[0];
 }
 
-void swap(int* a,int* b){
-    int temp=*b;
+void swap(fx* a,fx* b){
+    fx temp=*b;
     *b=*a;
     *a=temp;
 }
 
 
-int* pop(int* list){
+fx* pop(fx* list){
     length--;
     int postion=0;//POP时初始节点为0节点
     int son=postion*2+1;
     //int* result=new int[length];
     list[postion]=list[length];//将0节点赋值为末位数
-    while (son<length-1) {
-        if (son+1<length-1&&list[son]<list[son+1]) {
+    while (son<length) {
+        if (son+1<length&&get_value(list[son])>get_value(list[son+1])) {//寻找左右子节点较小值
             son++;
         }
-        if (list[postion]>list[son]) {
+        if (get_value(list[postion])<get_value(list[son])) {//如果父节点小于子节点跳出循环
             break;
         }
         else{
@@ -60,7 +71,7 @@ int* pop(int* list){
     return  list;
 }
 
-int* push(int* list,int number){
+fx* push(fx* list,fx number){
     int postion=length;
     length++;
     //    int* result=new int[length];
@@ -68,11 +79,12 @@ int* push(int* list,int number){
     //        result[i]=list[i];
     //    }
     list[postion]=number;
+    //cout<<get_value(number)<<endl;
     //list=get_father_node(list, postion);
     while (postion>0) {
         int father_postion=(postion+1)/2-1;
-        if (number<list[father_postion]) {//与父节点比较
-            break;                          //如果比父节点小,则跳出循环
+        if (get_value(number)>get_value(list[father_postion])) {//与父节点比较
+            break;                          //如果比父节点大,则跳出循环
         }else{
             list[postion]=list[father_postion];//否则将父结点与当前结点交换位置
             list[father_postion]=number;
@@ -83,39 +95,34 @@ int* push(int* list,int number){
     return list;
 }
 
-int get_small(int a,int b){
-    return a<b?a:b;
-}
-
-
 int read_data(int N,int M,int K){
     int result;
-    int* list=new int[K];
-    //length=K;
-//    for (length=0; length<K; length++) {
-//        list[length]=10000*100+100;
-//    }
-    //print_list(length, list);
-    int count=get_small(M, K);
-    for (int i=0; i<N; i++) {
-        int a,b;
-        cin>>a>>b;
-        for (int k=1; k<=count; k++) {
-            int current=a*k+b;
-            if (length<K) {
-               list= push(list, current);
-            }else{
-                if (current>=top(list)) {//如果当前数组最大的数比第k个数大，跳出循环
-                    break;
-                }else{//否则，删除最大的一个数，将第k个数加入数组
-                    list=pop(list);
-                    list=push(list, current);
-                }
-            }
-        }
+    fx* list=new fx[N];
+    fx* factors=new fx[N];
+    int i,mins=1;
+    //初始化HEAP
+    for (i=0; i<N; i++) {
+        fx new_fx;
+        new_fx.k=1;
+        cin>>new_fx.a>>new_fx.b;
+        factors=push(list, new_fx);
     }
-    result=top(list);
-    print_list(length, list);
+    fx min;
+    while (mins<K) {
+        min=top(list);
+        if (min.k+1>M) {//如果k为该列最后一个则直接POP当前数列最小值
+            list=pop(list);
+            mins++;
+        }else{
+            min.k++;//否则新的数字的k+1
+            list=pop(list);
+            list=push(list, min);
+            mins++;
+        }
+        //print_list(length, list);
+    }
+    //print_list(length, list);
+    result=get_value(top(list));
     delete []list;
     return result;
 }
