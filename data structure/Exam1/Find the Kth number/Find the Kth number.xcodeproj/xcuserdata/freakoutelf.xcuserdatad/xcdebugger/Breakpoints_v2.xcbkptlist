@@ -10,11 +10,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Find the Kth number/main.cpp"
-            timestampString = "478575114.163511"
+            timestampString = "478922615.371752"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "read_data(int N,int M,int K)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            condition = "current==7"
+            continueAfterRunningActions = "No"
+            filePath = "Find the Kth number/main.cpp"
+            timestampString = "478922856.403797"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "read_data(int N,int M,int K)"
             landmarkType = "7">
          </BreakpointContent>

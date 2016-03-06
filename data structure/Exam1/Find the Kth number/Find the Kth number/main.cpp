@@ -31,38 +31,31 @@ int top(int* list){
     return list[0];
 }
 
+void swap(int* a,int* b){
+    int temp=*b;
+    *b=*a;
+    *a=temp;
+}
+
 
 int* pop(int* list){
     length--;
     int postion=0;//POP时初始节点为0节点
+    int son=postion*2+1;
     //int* result=new int[length];
     list[postion]=list[length];//将0节点赋值为末位数
-    //list=get_child_node(list, 0);
-    int number;
-    while (true) {
-        int child_postion,right,left;
-        right=2*postion+2;
-        if (length>right) {//当有两个子节点时
-            left=right-1;
-            if (list[left]>list[right]) {//两个子节点取大值
-                child_postion=left;
-            }else{
-                child_postion=right;
-            }
-        }else if (length==right){//只有一个子节点时取左边的
-            child_postion=right-1;
-        }else{//没有子节点时跳出循环
+    while (son<length-1) {
+        if (son+1<length-1&&list[son]<list[son+1]) {
+            son++;
+        }
+        if (list[postion]>list[son]) {
             break;
         }
-        number=list[postion];
-        if (number>=list[child_postion]) {//当当前节点值大于等于子节点大的一个数的值时，跳出循环
-            break;
-        }else{//否则交换父节点与子节点的值
-            list[postion]=list[child_postion];
-            list[child_postion]=number;
-            postion=child_postion;
+        else{
+            swap(&list[postion], &list[son]);
+            postion=son;
+            son=postion*2+1;
         }
-        
     }
     return  list;
 }
@@ -94,9 +87,6 @@ int get_small(int a,int b){
     return a<b?a:b;
 }
 
-int function_fx(int a,int b,int k){
-    return a*k+b;
-}
 
 int read_data(int N,int M,int K){
     int result;
@@ -125,7 +115,7 @@ int read_data(int N,int M,int K){
         }
     }
     result=top(list);
-    //print_list(length, list);
+    print_list(length, list);
     delete []list;
     return result;
 }
