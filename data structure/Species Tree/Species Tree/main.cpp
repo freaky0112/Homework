@@ -16,28 +16,28 @@ struct species{
     //int length=0;
 };
 
-species* list;
-int length=0;
-
-void print_list(){
-    cout<<endl;
-    for (int i=0; i<length; i++) {
-        cout<<list[i].key<<" ";
-    }
-    cout<<endl;
-}
-
-species* looking_for_species(long key){
-    species *result;
-    for (int i=0; i<length; i++) {
-        result=&list[i];
-        if (key==result->key) {
-            return result;
-        }
-    }
-    result=&list[length];
-    return result;
-}
+species* list=new species[1000000];
+//int length=0;
+//
+//void print_list(){
+//    cout<<endl;
+//    for (int i=0; i<length; i++) {
+//        cout<<list[i].key<<" ";
+//    }
+//    cout<<endl;
+//}
+//
+//species* looking_for_species(long key){
+//    species *result;
+//    for (int i=0; i<length; i++) {
+//        result=&list[i];
+//        if (key==result->key) {
+//            return result;
+//        }
+//    }
+//    result=&list[length];
+//    return result;
+//}
 
 long get_result(int Q){
     //print_list();
@@ -45,7 +45,8 @@ long get_result(int Q){
     for (; Q>0; Q--) {
         long x;
         cin>>x;
-        species* child=looking_for_species(x);
+        //species* child=looking_for_species(x);
+        species* child=&list[x-1];
         if (child->father!=NULL&&child->father->father!=NULL) {
             result+=child->father->father->key;
         }
@@ -54,24 +55,26 @@ long get_result(int Q){
 }
 
 void read_data(int N){
-    list=new species[N+1];
+    //list=new species[N+1];
+    //list=new species[1000000];
     for (; N>0; N--) {
         long x,y;
         cin>>x>>y;
         species *father,*child;
-        father=looking_for_species(x);
+        //father=looking_for_species(x);
+        father=&list[x-1];
         if (father->key==0) {
             father->key=x;
-            list[length]=*father;
-            length++;
+            //list[length]=*father;
+            //length++;
         }
         
-        child=looking_for_species(y);
-
+        //child=looking_for_species(y);
+        child=&list[y-1];
         if (child->key==0) {
             child->key=y;
-            list[length]=*child;
-            length++;
+            //list[length]=*child;
+            //length++;
             //print_list();
         }
         child->father=father;
