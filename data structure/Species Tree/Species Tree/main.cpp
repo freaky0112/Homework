@@ -9,75 +9,32 @@
 #include <iostream>
 using namespace std;
 
-struct species{
-    long key=0;
-    struct species* father;
-    //struct species* children;
-    //int length=0;
-};
 
-species* list=new species[1000000];
-//int length=0;
-//
-//void print_list(){
-//    cout<<endl;
-//    for (int i=0; i<length; i++) {
-//        cout<<list[i].key<<" ";
-//    }
-//    cout<<endl;
-//}
-//
-//species* looking_for_species(long key){
-//    species *result;
-//    for (int i=0; i<length; i++) {
-//        result=&list[i];
-//        if (key==result->key) {
-//            return result;
-//        }
-//    }
-//    result=&list[length];
-//    return result;
-//}
+int* list=new int[1000000];
 
-long get_result(int Q){
-    //print_list();
-    long result=0;
-    for (; Q>0; Q--) {
-        long x;
+int get_result(int Q){
+    int sum=0;
+    for (int i=0; i<Q; i++) {
+        int x;
         cin>>x;
-        //species* child=looking_for_species(x);
-        species* child=&list[x-1];
-        if (child->father!=NULL&&child->father->father!=NULL) {
-            result+=child->father->father->key;
+        x=list[x-1];
+        if (x!=0) {
+            x=list[x];
+        }
+        if (x!=0) {
+            sum+=x+1;
         }
     }
-    return result;
+    return sum;
 }
 
 void read_data(int N){
     //list=new species[N+1];
     //list=new species[1000000];
     for (; N>0; N--) {
-        long x,y;
+        int x,y;
         cin>>x>>y;
-        species *father,*child;
-        //father=looking_for_species(x);
-        father=&list[x-1];
-        if (father->key==0) {
-            father->key=x;
-            //list[length]=*father;
-            //length++;
-        }
-        
-        //child=looking_for_species(y);
-        child=&list[y-1];
-        if (child->key==0) {
-            child->key=y;
-            //list[length]=*child;
-            //length++;
-            //print_list();
-        }
-        child->father=father;
+        list[y-1]=x-1;
 
     }
 }
