@@ -18,7 +18,7 @@ int main(int argc, const char * argv[]) {
 		for (women=0;women<=max-men;women++)
 		{
 			children=max-men-women;
-			if (4*men+3*women+children/2==max)
+			if (4*men+3*women+(double)children/2==max)
 			{
 				print_result(men,women,children);
 				possible=false;
