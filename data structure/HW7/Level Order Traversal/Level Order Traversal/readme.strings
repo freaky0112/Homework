@@ -1,0 +1,39 @@
+/* 
+  readme.strings
+  Level Order Traversal
+
+  Created by JU YE on 16/3/14.
+  Copyright © 2016年 Freaky. All rights reserved.
+*/
+1Level Order Traversal（70分）
+题目内容：
+給一棵tree，還有他的root，輸出這棵tree的level order traversal。
+Note : 一個節點可能有大於兩個的孩子節點。
+Note : 當一個節點有多個孩子需要造訪時，由數字編號小的節點開始造訪。
+
+输入格式:
+第一行為一個正整數T(T<100)，代表測資數，接下來每筆測資如下格式：
+第一行有2個整數，N R，分別代表N個點以及root為編號R的節點，所有點的編號為1~N。
+接下來有N-1行，每行有2個數字u v，代表編號u的節點與編號v的節點相連。
+數字範圍：
+0 < N <= 1000
+
+输出格式：
+每棵tree輸出一行，level order traversal的結果，數字間以空格隔開。
+
+输入样例：
+2
+3 1
+1 2
+1 3
+5 5
+1 2
+4 5
+3 5
+5 2
+
+输出样例：
+1 2 3
+5 2 3 4 1
+
+时间限制：1000ms内存限制：128000kb
