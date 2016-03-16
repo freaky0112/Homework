@@ -1,0 +1,33 @@
+/* 
+  readme.strings
+  Tree Recovery
+
+  Created by JU YE on 16/3/15.
+  Copyright © 2016年 Freaky. All rights reserved.
+*/
+2Tree Recovery（30分）
+题目内容：
+給兩個字串s1,s2，s1是我們對一棵二元樹做pre order traversal的結果，s2是我們對同一棵樹做in order traversal的結果。只要有這兩個字串我們就可以重建這一棵樹，請將這棵樹重建完後，輸出他的post order traversal。
+
+输入格式:
+第一行為一個正整數T(T<100)，代表測資數，接下來每筆測資如下格式：
+第一行有2個字串，以空格隔開，s1 s2，分別是pre oder/in order traversal的結果。
+
+字串範圍：
+字串只包含大寫字母
+0 < |s1|, |s2| <= 26
+
+输出格式：
+每棵tree輸出一行，post order traversal的結果，字母間不需要用空格隔開。
+
+输入样例：
+ACBEGDFHI BCGEAHFID
+DBACEGF ABCDEFG
+BCAD CBAD
+
+输出样例：
+BGECHIFDA
+ACBFGED
+CDAB
+
+时间限制：1000ms内存限制：128000kb
