@@ -90,7 +90,10 @@ int read_data(){
     Node* node=&list[0];
     node=search(0,node);
     node=search(1,node);
-    return node->weight;
+    int weight=node->weight;
+    delete []queue;
+    delete []list;
+    return weight;
 }
 
 int main(int argc, const char * argv[]) {
