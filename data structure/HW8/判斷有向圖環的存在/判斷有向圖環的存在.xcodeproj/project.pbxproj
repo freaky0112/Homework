@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		67D5123F1C9BA2C80006FA86 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D5123E1C9BA2C80006FA86 /* main.cpp */; };
+		67D512521C9BB19E0006FA86 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D512511C9BB19E0006FA86 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		67D512391C9BA2C70006FA86 /* CopyFiles */ = {
+		67D5124C1C9BB19E0006FA86 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -23,13 +23,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		67D5123B1C9BA2C70006FA86 /* 樹的中心點 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "樹的中心點"; sourceTree = BUILT_PRODUCTS_DIR; };
-		67D5123E1C9BA2C80006FA86 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		67D512581C9BB38C0006FA86 /* readme.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = readme.strings; sourceTree = "<group>"; };
+		67D5124E1C9BB19E0006FA86 /* 判斷有向圖環的存在 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "判斷有向圖環的存在"; sourceTree = BUILT_PRODUCTS_DIR; };
+		67D512511C9BB19E0006FA86 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		67D512591C9BB7630006FA86 /* readme.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = readme.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		67D512381C9BA2C70006FA86 /* Frameworks */ = {
+		67D5124B1C9BB19E0006FA86 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,95 +39,95 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		67D512321C9BA2C70006FA86 = {
+		67D512451C9BB19E0006FA86 = {
 			isa = PBXGroup;
 			children = (
-				67D5123D1C9BA2C70006FA86 /* 樹的中心點 */,
-				67D5123C1C9BA2C70006FA86 /* Products */,
+				67D512501C9BB19E0006FA86 /* 判斷有向圖環的存在 */,
+				67D5124F1C9BB19E0006FA86 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		67D5123C1C9BA2C70006FA86 /* Products */ = {
+		67D5124F1C9BB19E0006FA86 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				67D5123B1C9BA2C70006FA86 /* 樹的中心點 */,
+				67D5124E1C9BB19E0006FA86 /* 判斷有向圖環的存在 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		67D5123D1C9BA2C70006FA86 /* 樹的中心點 */ = {
+		67D512501C9BB19E0006FA86 /* 判斷有向圖環的存在 */ = {
 			isa = PBXGroup;
 			children = (
-				67D5123E1C9BA2C80006FA86 /* main.cpp */,
-				67D512581C9BB38C0006FA86 /* readme.strings */,
+				67D512511C9BB19E0006FA86 /* main.cpp */,
+				67D512591C9BB7630006FA86 /* readme.strings */,
 			);
-			path = "樹的中心點";
+			path = "判斷有向圖環的存在";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		67D5123A1C9BA2C70006FA86 /* 樹的中心點 */ = {
+		67D5124D1C9BB19E0006FA86 /* 判斷有向圖環的存在 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 67D512421C9BA2C80006FA86 /* Build configuration list for PBXNativeTarget "樹的中心點" */;
+			buildConfigurationList = 67D512551C9BB19E0006FA86 /* Build configuration list for PBXNativeTarget "判斷有向圖環的存在" */;
 			buildPhases = (
-				67D512371C9BA2C70006FA86 /* Sources */,
-				67D512381C9BA2C70006FA86 /* Frameworks */,
-				67D512391C9BA2C70006FA86 /* CopyFiles */,
+				67D5124A1C9BB19E0006FA86 /* Sources */,
+				67D5124B1C9BB19E0006FA86 /* Frameworks */,
+				67D5124C1C9BB19E0006FA86 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "樹的中心點";
-			productName = "樹的中心點";
-			productReference = 67D5123B1C9BA2C70006FA86 /* 樹的中心點 */;
+			name = "判斷有向圖環的存在";
+			productName = "判斷有向圖環的存在";
+			productReference = 67D5124E1C9BB19E0006FA86 /* 判斷有向圖環的存在 */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		67D512331C9BA2C70006FA86 /* Project object */ = {
+		67D512461C9BB19E0006FA86 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Freaky;
 				TargetAttributes = {
-					67D5123A1C9BA2C70006FA86 = {
+					67D5124D1C9BB19E0006FA86 = {
 						CreatedOnToolsVersion = 7.2;
 					};
 				};
 			};
-			buildConfigurationList = 67D512361C9BA2C70006FA86 /* Build configuration list for PBXProject "樹的中心點" */;
+			buildConfigurationList = 67D512491C9BB19E0006FA86 /* Build configuration list for PBXProject "判斷有向圖環的存在" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 67D512321C9BA2C70006FA86;
-			productRefGroup = 67D5123C1C9BA2C70006FA86 /* Products */;
+			mainGroup = 67D512451C9BB19E0006FA86;
+			productRefGroup = 67D5124F1C9BB19E0006FA86 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				67D5123A1C9BA2C70006FA86 /* 樹的中心點 */,
+				67D5124D1C9BB19E0006FA86 /* 判斷有向圖環的存在 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		67D512371C9BA2C70006FA86 /* Sources */ = {
+		67D5124A1C9BB19E0006FA86 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67D5123F1C9BA2C80006FA86 /* main.cpp in Sources */,
+				67D512521C9BB19E0006FA86 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		67D512401C9BA2C80006FA86 /* Debug */ = {
+		67D512531C9BB19E0006FA86 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -170,7 +170,7 @@
 			};
 			name = Debug;
 		};
-		67D512411C9BA2C80006FA86 /* Release */ = {
+		67D512541C9BB19E0006FA86 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -206,14 +206,14 @@
 			};
 			name = Release;
 		};
-		67D512431C9BA2C80006FA86 /* Debug */ = {
+		67D512561C9BB19E0006FA86 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		67D512441C9BA2C80006FA86 /* Release */ = {
+		67D512571C9BB19E0006FA86 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -223,25 +223,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		67D512361C9BA2C70006FA86 /* Build configuration list for PBXProject "樹的中心點" */ = {
+		67D512491C9BB19E0006FA86 /* Build configuration list for PBXProject "判斷有向圖環的存在" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				67D512401C9BA2C80006FA86 /* Debug */,
-				67D512411C9BA2C80006FA86 /* Release */,
+				67D512531C9BB19E0006FA86 /* Debug */,
+				67D512541C9BB19E0006FA86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		67D512421C9BA2C80006FA86 /* Build configuration list for PBXNativeTarget "樹的中心點" */ = {
+		67D512551C9BB19E0006FA86 /* Build configuration list for PBXNativeTarget "判斷有向圖環的存在" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				67D512431C9BA2C80006FA86 /* Debug */,
-				67D512441C9BA2C80006FA86 /* Release */,
+				67D512561C9BB19E0006FA86 /* Debug */,
+				67D512571C9BB19E0006FA86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 67D512331C9BA2C70006FA86 /* Project object */;
+	rootObject = 67D512461C9BB19E0006FA86 /* Project object */;
 }
