@@ -1,0 +1,36 @@
+/* 
+  readme.strings
+  二元搜尋樹recovery
+
+  Created by JU YE on 16/4/7.
+  Copyright © 2016年 Freaky. All rights reserved.
+*/
+二元搜尋樹recovery（50分）
+题目内容：
+給一顆二元搜尋樹的preorder
+請輸出樹的postorder
+
+输入格式:
+
+輸入第一行為一個數字T，代表測資的筆數。
+接下來會有T筆測資，每一筆測資第一行有一個數字N
+接下來有一行有N個數字為preorder（數字<=2000，且不重複）
+
+
+測資範圍：
+T < 100
+0 < N <= 2000
+
+
+输出格式：
+一行n個數字的數列為postorder，數字間以空白隔開
+
+输入样例：
+1
+6
+5 2 1 4 8 9
+
+输出样例：
+1 4 2 9 8 5
+
+时间限制：500ms内存限制：32000kb
