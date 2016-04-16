@@ -6,7 +6,7 @@ int max(int* list,int len){
 	{
 		return list[0];
 	}else{
-		int a=list[0];
+		int a=list[len-1];
 		int b=max(list,len-1);
 		return a>b?a:b;
 	}
