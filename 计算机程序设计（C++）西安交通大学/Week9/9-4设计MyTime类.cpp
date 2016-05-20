@@ -1,5 +1,6 @@
 #include <iostream>
 #include "string.h"
+#include <iomanip>
 using namespace std;
 
 class MyTime
@@ -11,27 +12,47 @@ public:
 		second=ss;
 	}
 	void print_12(){
+
+
 		if (hour>=12)
 		{
-			hour=hour-1;
+			
 			zone[0]='P';
+			print(hour-12);
+		}else{
+			print(hour);
 		}
-		cout<<hour<<":"<<minute<<":"<<second<<" "<<zone<<endl;
+		cout<<":";
+		print(minute);
+		cout<<":";
+		print(second);
+		cout<<" "<<zone[0]<<zone[1]<<endl;
+
 	}
 	void print_24(){
-		cout<<hour<<":"<<minute<<":"<<second<<endl;
+		print(hour);
+		cout<<":";
+		print(minute);
+		cout<<":";
+		print(second);
+		cout<<endl;
 	}
 private:	
 	int hour;
 	int minute;
 	int second;
 	char zone[2]={'A','M'};
+	void print(int num){
+		cout<<setfill('0')<<setw(2)<<num;
+	}
 };
 
 int main(int argc, const char * argv[]) {
 	int hh,mm,ss;
+	//cout<<setfill('0')<<setw(2)<<1;
 	cin>>hh>>mm>>ss;
 	MyTime time;
+
 	time.SetTime(hh,mm,ss);
 	time.print_12();
 	time.print_24();
